@@ -18,6 +18,15 @@
 		6735D1082BD8B962003755A8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6735D1072BD8B962003755A8 /* FirebaseAuth */; };
 		6735D10C2BD8B9DD003755A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D10B2BD8B9DD003755A8 /* AppDelegate.swift */; };
 		6735D10E2BD8BB8A003755A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6735D10D2BD8BB8A003755A8 /* GoogleService-Info.plist */; };
+		6735D1122BD975F9003755A8 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1112BD975F9003755A8 /* AuthenticationView.swift */; };
+		6735D1142BD97619003755A8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1132BD97619003755A8 /* AuthenticationViewModel.swift */; };
+		6735D1172BD97907003755A8 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1162BD97907003755A8 /* DiContainer.swift */; };
+		6735D11B2BD97CDF003755A8 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D11A2BD97CDF003755A8 /* Services.swift */; };
+		6735D11D2BD97E91003755A8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D11C2BD97E91003755A8 /* AuthenticationService.swift */; };
+		6735D1222BD982AF003755A8 /* LoginFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1212BD982AF003755A8 /* LoginFirstView.swift */; };
+		6735D1242BD982BA003755A8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1232BD982BA003755A8 /* MainTabView.swift */; };
+		6735D1262BD9874A003755A8 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1252BD9874A003755A8 /* ButtonStyle.swift */; };
+		6735D1282BD9882E003755A8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6735D1272BD9882E003755A8 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,16 @@
 		6735D0FD2BD8AE8D003755A8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6735D10B2BD8B9DD003755A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6735D10D2BD8BB8A003755A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6735D1112BD975F9003755A8 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		6735D1132BD97619003755A8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		6735D1162BD97907003755A8 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
+		6735D1182BD97C40003755A8 /* ChatApp-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ChatApp-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6735D11A2BD97CDF003755A8 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		6735D11C2BD97E91003755A8 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		6735D1212BD982AF003755A8 /* LoginFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstView.swift; sourceTree = "<group>"; };
+		6735D1232BD982BA003755A8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		6735D1252BD9874A003755A8 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		6735D1272BD9882E003755A8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +121,14 @@
 		6735D0D12BD8AE04003755A8 /* ChatApp_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6735D1182BD97C40003755A8 /* ChatApp-SwiftUI-Info.plist */,
 				6735D10D2BD8BB8A003755A8 /* GoogleService-Info.plist */,
 				6735D0D22BD8AE04003755A8 /* ChatApp_SwiftUIApp.swift */,
 				6735D10B2BD8B9DD003755A8 /* AppDelegate.swift */,
 				6735D0FF2BD8AFA5003755A8 /* Extension */,
+				6735D1192BD97CD0003755A8 /* Service */,
+				6735D1152BD978E6003755A8 /* Dependency */,
+				6735D10F2BD975C5003755A8 /* View */,
 				6735D0FC2BD8AE57003755A8 /* Resource */,
 				6735D0D42BD8AE04003755A8 /* ContentView.swift */,
 				6735D0D82BD8AE06003755A8 /* Preview Content */,
@@ -152,6 +175,60 @@
 			children = (
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6735D10F2BD975C5003755A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6735D1202BD9829E003755A8 /* MainTab */,
+				6735D11E2BD98263003755A8 /* Login */,
+				6735D1102BD975D2003755A8 /* Authentication */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6735D1102BD975D2003755A8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6735D1112BD975F9003755A8 /* AuthenticationView.swift */,
+				6735D1132BD97619003755A8 /* AuthenticationViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		6735D1152BD978E6003755A8 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				6735D1162BD97907003755A8 /* DiContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		6735D1192BD97CD0003755A8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6735D11A2BD97CDF003755A8 /* Services.swift */,
+				6735D11C2BD97E91003755A8 /* AuthenticationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6735D11E2BD98263003755A8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6735D1212BD982AF003755A8 /* LoginFirstView.swift */,
+				6735D1252BD9874A003755A8 /* ButtonStyle.swift */,
+				6735D1272BD9882E003755A8 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6735D1202BD9829E003755A8 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				6735D1232BD982BA003755A8 /* MainTabView.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,9 +369,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6735D1172BD97907003755A8 /* DiContainer.swift in Sources */,
+				6735D11B2BD97CDF003755A8 /* Services.swift in Sources */,
+				6735D1122BD975F9003755A8 /* AuthenticationView.swift in Sources */,
+				6735D1222BD982AF003755A8 /* LoginFirstView.swift in Sources */,
+				6735D1142BD97619003755A8 /* AuthenticationViewModel.swift in Sources */,
 				6735D10C2BD8B9DD003755A8 /* AppDelegate.swift in Sources */,
+				6735D1282BD9882E003755A8 /* LoginView.swift in Sources */,
 				6735D0D52BD8AE04003755A8 /* ContentView.swift in Sources */,
 				6735D0D32BD8AE04003755A8 /* ChatApp_SwiftUIApp.swift in Sources */,
+				6735D11D2BD97E91003755A8 /* AuthenticationService.swift in Sources */,
+				6735D1262BD9874A003755A8 /* ButtonStyle.swift in Sources */,
+				6735D1242BD982BA003755A8 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +547,7 @@
 				DEVELOPMENT_TEAM = 8G9QJBS8AT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatApp-SwiftUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +577,7 @@
 				DEVELOPMENT_TEAM = 8G9QJBS8AT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatApp-SwiftUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

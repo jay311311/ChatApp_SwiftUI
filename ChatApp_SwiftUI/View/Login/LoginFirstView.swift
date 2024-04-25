@@ -26,7 +26,6 @@ struct LoginFirstView: View {
                 } label: {
                     Text("Log In")
                 }.buttonStyle(LoginButtonStyle(textColor: .lineApp))
-//                Spacer()
             }
             .navigationDestination(isPresented: $isPresentLoginView) {
                 LoginView()

@@ -15,6 +15,7 @@ struct AuthenticationView: View {
             switch authViewModel.authenticationState {
             case .unauthenticated:
                 LoginFirstView()
+                    .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
             }
@@ -26,7 +27,5 @@ struct AuthenticationView: View {
 }
 
 #Preview {
-
     AuthenticationView(authViewModel: .init(container: .init(services: StubService())))
-//        .environmentObject(container)
 }

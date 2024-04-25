@@ -6,10 +6,51 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+
 
 struct LoginView: View {
+    @Environment(\.dismiss) var dismiss  // for backButton Customize
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+
     var body: some View {
-        Text("Hello, LoginView!")
+        VStack(alignment: .leading){
+            Group{
+                Text("Login")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundStyle(.bkText)
+                    .padding(.top,80)
+                
+                Text("로그인 방식을 선택해주세요")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.greyDeep)
+                
+            }.padding(.horizontal, 30)
+            Spacer()
+            
+            Button {
+                authViewModel.send(action: .googleLogin)
+            } label: {
+                Text("Google Login")
+            }.buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyLight))
+        }
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName:"chevron.backward")
+                        .foregroundStyle(.bkText)
+                }
+
+            }
+        }
+        .overlay {
+            if authViewModel.isLoading {
+                ProgressView()
+            }
+        }
     }
 }
 

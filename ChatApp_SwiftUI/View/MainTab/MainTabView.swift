@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State private var selecteItem: MainTabType = .house
     var body: some View {
-        Text("Hello, MainTabView!")
+        TabView(selection: $selecteItem){
+            ForEach(MainTabType.allCases, id: \.self) { tab in
+                
+                Group {
+                    switch tab{
+                    case .house:
+                        HomeView()
+                    case .message:
+                        MessageView()
+                    case .phone:
+                        CallView()
+                    }
+                }.tabItem {
+                    Label(tab.title, systemImage: tab.imageName(selected: selecteItem == tab) )
+                }
+                .tag(tab)
+            }
+        }.tint(.lineApp)
+    }
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.greyFix)
     }
 }
 

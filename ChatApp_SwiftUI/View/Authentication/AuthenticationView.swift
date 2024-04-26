@@ -18,6 +18,7 @@ struct AuthenticationView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environmentObject(authViewModel)
             }
         }.onAppear {
             authViewModel.send(action: .checkAuthenticationState)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginFirstView: View {
     @State var isPresentLoginView: Bool = false
+    
     var body: some View {
         NavigationStack {
             VStack(spacing:20) {

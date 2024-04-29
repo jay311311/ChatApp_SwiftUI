@@ -1,14 +1,13 @@
 //
-//  User.swift
+//  UserObject.swift
 //  ChatApp_SwiftUI
 //
-//  Created by Jooeun Kim on 2024-04-24.
+//  Created by Jooeun Kim on 2024-04-29.
 //
 
 import Foundation
 
-
-struct User: Identifiable {
+struct UserObject: Codable {
     var id: String
     var name: String
     var phoneNumber: String?
@@ -17,8 +16,8 @@ struct User: Identifiable {
     var fcmToken: String?
 }
 
-extension User {
-    func toObject() -> UserObject {
+extension UserObject {
+    func toModel() -> User {
         .init(id: id,
               name: name,
               phoneNumber: phoneNumber,
@@ -26,16 +25,5 @@ extension User {
               description: description,
               fcmToken: fcmToken
         )
-    }
-}
-
-
-extension User {
-    static var stub1: User {
-        .init(id: "user1_id", name: "Mike")
-    }
-    
-    static var stub2: User {
-        .init(id: "user2_id", name: "cork")
     }
 }

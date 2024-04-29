@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:963025578719:ios:a87efeffc3262822c7576a</string>
+	<key>DATABASE_URL</key>
+	<string>https://swiftui-chatapp-5a3cd-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

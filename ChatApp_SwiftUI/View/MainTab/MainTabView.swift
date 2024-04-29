@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @EnvironmentObject var container: DiContainer
     @State private var selecteItem: MainTabType = .house
+
     var body: some View {
         TabView(selection: $selecteItem){
             ForEach(MainTabType.allCases, id: \.self) { tab in
@@ -16,7 +19,7 @@ struct MainTabView: View {
                 Group {
                     switch tab{
                     case .house:
-                        HomeView()
+                        HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .message:
                         MessageView()
                     case .phone:

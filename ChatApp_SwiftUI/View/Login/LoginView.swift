@@ -30,6 +30,8 @@ struct LoginView: View {
             
             Button {
                 authViewModel.send(action: .googleLogin)
+//                authViewModel.send(action: .logout)
+
             } label: {
                 Text("Google Login")
             }.buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyLight))

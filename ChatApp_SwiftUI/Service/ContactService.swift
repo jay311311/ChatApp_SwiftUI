@@ -31,14 +31,14 @@ class ContactService: ContactServiceType {
     private func fetchContact(completion: @escaping (Result<[User], Error>) -> Void) {
         let store = CNContactStore()
         
-        store.requestAccess(for: .contacts) { [weak self] isGrant, error in
+        store.requestAccess(for: .contacts) { isGranted, error in
             if let error {
                 completion(.failure(error))
                 return
             }
             
-            guard isGrant else {
-                completion( .failure(ContactError.permissionDeny))
+            guard isGranted else {
+                completion(.failure(ContactError.permissionDeny))
                 return
             }
             
@@ -61,7 +61,8 @@ class ContactService: ContactServiceType {
             try store.enumerateContacts(with: request) { contact, _ in
                 let name = CNContactFormatter.string(from: contact, style: .fullName) ?? ""
                 let phoneNumber = contact.phoneNumbers.first?.value.stringValue
-                let user = User.init(id: UUID().uuidString, name: name, phoneNumber: phoneNumber)
+                let user: User = .init(id: UUID().uuidString, name: name, phoneNumber: phoneNumber)
+                
                 users.append(user)
             }
             completion(.success(users))

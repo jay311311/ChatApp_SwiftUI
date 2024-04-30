@@ -57,9 +57,9 @@ class HomeViewModel: ObservableObject {
             
         case .requestContacts:
             container.services.contactService.fetchContact()
-                .flatMap { [weak self] user -> AnyPublisher<Void, ServiceError> in
+                .flatMap { [weak self] users -> AnyPublisher<Void, ServiceError> in
                     guard let `self` = self else { return Empty().eraseToAnyPublisher() }
-                    return container.services.userService.addUserAfterContact(users: user)
+                    return self.container.services.userService.addUserAfterContact(users: users)
                 }
                 .flatMap { [weak self] _ -> AnyPublisher<[User], ServiceError> in
                     guard let `self` = self else { return Empty().eraseToAnyPublisher() }

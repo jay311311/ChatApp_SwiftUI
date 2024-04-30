@@ -48,15 +48,20 @@ class AuthenticationViewModel: ObservableObject {
             isLoading = true
             
             container.services.authService.signInWithGoogle()
+                .flatMap { [weak self] user -> AnyPublisher<User, ServiceError> in
+                    guard let `self` = self else { return Empty().eraseToAnyPublisher() }
+                    return self.container.services.userService.addUser(user)
+                }
                 .sink { [weak self] completion in
                     if case .failure = completion {
                         self?.isLoading = false
                     }
                 } receiveValue: { [weak self] user in
+                    self?.isLoading = false
                     self?.userId = user.id
                     self?.authenticationState = .authenticated
                 }.store(in: &subscriptions)
-
+            
         case .logout:
             container.services.authService.logout()
                 .sink { completion in

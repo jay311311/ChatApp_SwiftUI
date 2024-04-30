@@ -53,6 +53,7 @@
 		67DBB4242BE02C60002B2D62 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DBB4232BE02C60002B2D62 /* SearchButton.swift */; };
 		67DBB4272BE02DD2002B2D62 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DBB4262BE02DD2002B2D62 /* UserObject.swift */; };
 		67DBB4292BE02E06002B2D62 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DBB4282BE02E06002B2D62 /* Constant.swift */; };
+		67DBB42B2BE0996C002B2D62 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DBB42A2BE0996C002B2D62 /* ContactService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		67DBB4232BE02C60002B2D62 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		67DBB4262BE02DD2002B2D62 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		67DBB4282BE02E06002B2D62 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		67DBB42A2BE0996C002B2D62 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				6735D11C2BD97E91003755A8 /* AuthenticationService.swift */,
 				67DBB4042BE02774002B2D62 /* UserService.swift */,
 				6735D1312BD9B6AD003755A8 /* ServiceError.swift */,
+				67DBB42A2BE0996C002B2D62 /* ContactService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				67DBB4222BE02C44002B2D62 /* ErrorView.swift in Sources */,
 				6735D1282BD9882E003755A8 /* LoginView.swift in Sources */,
 				6735D1FB2BDB4864003755A8 /* MainTabType.swift in Sources */,
+				67DBB42B2BE0996C002B2D62 /* ContactService.swift in Sources */,
 				6735D2042BDB4BB5003755A8 /* MessageViewModel.swift in Sources */,
 				67DBB4192BE02AB9002B2D62 /* SettingView.swift in Sources */,
 				67DBB4162BE02A89002B2D62 /* OtherProfileView.swift in Sources */,

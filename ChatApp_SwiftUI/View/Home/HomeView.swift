@@ -44,13 +44,13 @@ struct HomeView: View {
         case .success:
             loadedView
                 .toolbar {
-                    Image(decorative: "bookmark")
-                    Image(decorative: "notifications")
-                    Image(decorative: "person_add")
+                    Image(systemName: "bookmark")
+                    Image(systemName: "notifications")
+                    Image(systemName: "person_add")
                     Button {
                         viewModel.send(action: .presentView(.setting))
                     } label: {
-                        Image("settings", label: Text("설정"))
+                        Image(systemName:"settings")
                     }
                 }
         case .fail:
@@ -69,7 +69,7 @@ struct HomeView: View {
             .padding(.bottom, 24)
             
             HStack {
-                Text("친구")
+                Text("friend")
                     .font(.system(size: 14))
                     .foregroundColor(.bkText)
                     .accessibilityAddTraits(.isHeader)

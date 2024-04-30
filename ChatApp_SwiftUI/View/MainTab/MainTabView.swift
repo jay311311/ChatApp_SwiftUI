@@ -15,7 +15,6 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selecteItem){
             ForEach(MainTabType.allCases, id: \.self) { tab in
-                
                 Group {
                     switch tab{
                     case .house:

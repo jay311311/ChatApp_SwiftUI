@@ -52,12 +52,25 @@ class HomeViewModel: ObservableObject {
                     self?.phase = .success
                     self?.users = users
                 }.store(in: &subscriptions)
-     
         case let .presentView(destination):
             modalDestination = destination
             
         case .requestContacts:
-            break
+            container.services.contactService.fetchContact()
+                .flatMap { [weak self] user -> AnyPublisher<Void, ServiceError> in
+                    guard let `self` = self else { return Empty().eraseToAnyPublisher() }
+                    return container.services.userService.addUserAfterContact(users: user)
+                }
+                .flatMap { [weak self] _ -> AnyPublisher<[User], ServiceError> in
+                    guard let `self` = self else { return Empty().eraseToAnyPublisher() }
+                    return self.container.services.userService.loadUsers(id: self.userId)
+                }
+                .receive(on: DispatchQueue.main)
+                .sink { completion in
+                } receiveValue: { [weak self] users in
+                    self?.phase = .success
+                    self?.users = users
+                }.store(in: &subscriptions)
         }
     }
 }

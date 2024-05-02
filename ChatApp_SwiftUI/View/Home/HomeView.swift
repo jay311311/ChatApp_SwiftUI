@@ -20,8 +20,7 @@ struct HomeView: View {
                     case .myProfile:
                         MyProfileView()
                     case let .otherProfile(userId):
-                        OtherProfileView{
-                                viewModel.send(action: .goToChat)
+                        OtherProfileView(viewModel: .init(userId: userId, container: container)) { otherUser in viewModel.send(action: .goToChat(otherUser))
                         }
                         
                     case .setting:

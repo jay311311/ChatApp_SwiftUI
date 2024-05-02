@@ -12,10 +12,10 @@ struct NavigatorRoutingView: View {
     @State var destination: NavigatorDestination
     var body: some View {
         switch destination {
-        case .chat(let chatRoomId, let myId, let otherUserId) :
+        case let .chat(chatRoomId, myId, otherUserId) :
             ChatView()
                 .foregroundStyle(.blue)
-        case.search(let userId):
+        case let .search(userId):
             SearchView()
                 .foregroundStyle(.green)
 

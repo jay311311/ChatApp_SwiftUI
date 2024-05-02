@@ -14,7 +14,7 @@ class HomeViewModel: ObservableObject {
         case load
         case requestContacts
         case presentView(HomeModalDestination)
-        case goToChat
+        case goToChat(User)
     }
     
     @Published var phase: Phase = .notRequested
@@ -73,7 +73,7 @@ class HomeViewModel: ObservableObject {
                     self?.users = users
                 }.store(in: &subscriptions)
             
-        case .goToChat:
+        case let .goToChat(User):
             // mock-data
             self.container.navigator.push(to: .chat(chatRoomId: "chatRoom1_id",
                                                     myId: "김하늘",

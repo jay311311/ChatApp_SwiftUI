@@ -12,23 +12,26 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
-//        NavigationStack(path: $container.navigationRouter.destinations) {
+        
+        NavigationStack(path: $container.navigator.destinations) {
             contentView
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
                         MyProfileView()
                     case let .otherProfile(userId):
-                        OtherProfileView()
+                        OtherProfileView{
+                                viewModel.send(action: .goToChat)
+                        }
                         
                     case .setting:
                         SettingView()
                     }
                 }
-//                .navigationDestination(for: NavigationDestination.self) {
-//                    NavigationRoutingView(destination: $0)
-//                }
-//        }
+                .navigationDestination(for: NavigatorDestination.self) {
+                    NavigatorRoutingView(destination: $0)
+                }
+        }
     }
     
     @ViewBuilder
@@ -45,12 +48,13 @@ struct HomeView: View {
             loadedView
                 .toolbar {
                     Image(systemName: "bookmark")
-                    Image(systemName: "notifications")
-                    Image(systemName: "person_add")
+                    Image(systemName: "bell")
+                    Image(systemName: "person.badge.plus")
                     Button {
                         viewModel.send(action: .presentView(.setting))
                     } label: {
-                        Image(systemName:"settings")
+                        Image(systemName:"gearshape")
+                            .tint(.black)
                     }
                 }
         case .fail:
@@ -63,9 +67,9 @@ struct HomeView: View {
             profileView
                 .padding(.bottom, 30)
             
-//            NavigationLink(value: NavigationDestination.search(userId: viewModel.userId)) {
+            NavigationLink(value: NavigatorDestination.search(userId: viewModel.userId)) {
                 SearchButton()
-//            }
+            }
             .padding(.bottom, 24)
             
             HStack {

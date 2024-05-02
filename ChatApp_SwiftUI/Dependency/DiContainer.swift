@@ -9,14 +9,19 @@ import Foundation
 
 class DiContainer: ObservableObject {
     var services: ServiceType
+    var navigator: NavigationRoutable & ObservableObjectSettable
 
-    init(services: ServiceType) {
+    init(services: ServiceType, 
+         navigator: NavigationRoutable & ObservableObjectSettable = NavigatorRouter()) {
         self.services = services
+        self.navigator = navigator
+        
+        self.navigator.setObjectWillChange(objectWillChange)
     }
 }
 
 extension DiContainer {
     static var stub: DiContainer {
-        .init(services: StubService())
+        .init(services: StubService() )
     }
 }

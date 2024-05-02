@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct OtherProfileView: View {
+    @Environment(\.dismiss) var dismiss
+    var goToChat: () -> Void
+
     var body: some View {
-        Text("Hello, OtherProfileView!")
+        VStack {
+            Text("Hello, OtherProfileView!")
+            Button {
+                dismiss()
+                goToChat()
+            } label: {
+                Text("goToChat() 호출되는지 확인 버튼")
+            }
+
+        }
     }
 }
 
 #Preview {
-    OtherProfileView()
+    OtherProfileView{
+        print("Hello, OtherProfileView!")
+    }
 }

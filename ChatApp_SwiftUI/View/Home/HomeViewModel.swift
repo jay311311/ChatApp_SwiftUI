@@ -14,8 +14,9 @@ class HomeViewModel: ObservableObject {
         case load
         case requestContacts
         case presentView(HomeModalDestination)
+        case goToChat
     }
-
+    
     @Published var phase: Phase = .notRequested
     @Published var myUser: User?
     @Published var users: [User] = []
@@ -71,6 +72,12 @@ class HomeViewModel: ObservableObject {
                     self?.phase = .success
                     self?.users = users
                 }.store(in: &subscriptions)
+            
+        case .goToChat:
+            // mock-data
+            self.container.navigator.push(to: .chat(chatRoomId: "chatRoom1_id",
+                                                    myId: "김하늘",
+                                                    otherUserId: "user1_id"))
         }
     }
 }

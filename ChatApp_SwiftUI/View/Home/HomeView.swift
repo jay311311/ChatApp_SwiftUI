@@ -18,7 +18,7 @@ struct HomeView: View {
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        MyProfileView()
+                        MyProfileView(viewModel: .init(userId: viewModel.userId, container: container))
                     case let .otherProfile(userId):
                         OtherProfileView(viewModel: .init(userId: userId, container: container)) { otherUser in viewModel.send(action: .goToChat(otherUser))
                         }

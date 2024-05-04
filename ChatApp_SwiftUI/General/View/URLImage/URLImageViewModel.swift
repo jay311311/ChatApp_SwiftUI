@@ -32,12 +32,12 @@ class URLImageViewModel: ObservableObject {
         
         loading = true
         
-//        container.services.imageCacheService.image(for: urlString)
-//            .subscribe(on: DispatchQueue.global())
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] image in
-//                self?.loading = false
-//                self?.loadedImage = image
-//            }.store(in: &subscriptions)
+        container.services.imageCacheService.image(for: urlString)
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] image in
+                self?.loading = false
+                self?.loadedImage = image
+            }.store(in: &subscriptions)
     }
 }

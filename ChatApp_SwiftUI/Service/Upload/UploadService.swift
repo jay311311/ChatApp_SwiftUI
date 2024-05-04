@@ -14,17 +14,22 @@ protocol UploadServiceType {
 }
 
 class UploadService: UploadServiceType {
+    private let provider: UploadProviderType
+    
+    init(provider: UploadProviderType) {
+        self.provider = provider
+    }
+    
     func uploadImage(source: UploadSourceType, data: Data) -> AnyPublisher<URL, ServiceError> {
-        // TODO:
-        Empty().eraseToAnyPublisher()
+        provider.uploadURL(path: source.path, data: data, fileName: UUID().uuidString)
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
     }
     
     func uploadImage(source: UploadSourceType, data: Data) async throws -> URL {
-        // TODO:
-        return URL(string: "google.com")!
+        let url = try await provider.uploadURL(path: source.path, data: data, fileName: UUID().uuidString)
+        return url
     }
-    
-    
 }
 
 class StubUploadService: UploadServiceType {

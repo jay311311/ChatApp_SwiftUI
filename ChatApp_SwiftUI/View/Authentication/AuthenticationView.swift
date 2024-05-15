@@ -18,6 +18,7 @@ struct AuthenticationView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environment(\.managedObjectContext, container.searchDataController.persistantContainer.viewContext)
                     .environmentObject(authViewModel)
             }
         }.onAppear {

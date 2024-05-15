@@ -87,10 +87,10 @@ struct HomeView: View {
                 LazyVStack {
                     ForEach(viewModel.users) { user in
                         HStack(spacing: 8) {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
+                            URLImageView(urlString: user.profileURL)
                                 .foregroundStyle(.greyFix)
                                 .frame(width: 40, height: 40)
+                                .clipShape(Circle())
 
                             Text(user.name)
                                 .font(.system(size: 12))
@@ -124,11 +124,11 @@ struct HomeView: View {
             
             Spacer()
             
-            Image(systemName: "person.circle.fill")
-                .resizable()
+            URLImageView(urlString: viewModel.myUser?.profileURL)
                 .foregroundStyle(.greyFix)
                 .frame(width: 42, height: 42)
                 .padding(.all, 5)
+                .clipShape(Circle())
 
         }
         .padding(.horizontal, 30)

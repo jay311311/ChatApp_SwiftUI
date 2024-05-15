@@ -20,16 +20,16 @@ struct OtherProfileView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
+                
                 LinearGradient(gradient: Gradient(colors: [ Color.black.opacity(0.1)]), startPoint: .zero, endPoint: .zero)
                     .ignoresSafeArea()
-               
                 
                 VStack{
                     Spacer()
-                    Image(systemName: "person.circle")
-                        .resizable()
+                    URLImageView(urlString: viewModel.userInfo?.profileURL)
                         .frame(width: 60, height: 60)
                         .padding(.bottom, 16)
+                        .clipShape(Circle())
                     
                     Text("\(viewModel.userInfo?.name ?? "unknown")")
                         .font(.system(size: 24,weight: .bold))

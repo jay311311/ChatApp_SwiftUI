@@ -50,6 +50,11 @@
 		675935CC2BE6A790005D535F /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935CB2BE6A790005D535F /* MemoryStorage.swift */; };
 		675935CE2BE6AA3C005D535F /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935CD2BE6AA3C005D535F /* DiskStorage.swift */; };
 		675935D22BE6AE87005D535F /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935D12BE6AE87005D535F /* SHA256.swift */; };
+		675935F32BF427DD005D535F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935F22BF427DD005D535F /* SearchViewModel.swift */; };
+		675935F62BF43CB1005D535F /* SearchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935F52BF43CB1005D535F /* SearchDataController.swift */; };
+		675935F92BF43D41005D535F /* Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 675935F72BF43D41005D535F /* Search.xcdatamodeld */; };
+		675935FB2BF43F3A005D535F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935FA2BF43F3A005D535F /* SearchBar.swift */; };
+		675935FD2BF44BFC005D535F /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675935FC2BF44BFC005D535F /* RecentSearchView.swift */; };
 		67C283DB2BE3D26B00156BF4 /* OtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C283DA2BE3D26B00156BF4 /* OtherProfileViewModel.swift */; };
 		67C283DD2BE3DA2C00156BF4 /* OtherProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C283DC2BE3DA2C00156BF4 /* OtherProfileMenuType.swift */; };
 		67C283DF2BE3F00700156BF4 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C283DE2BE3F00700156BF4 /* MyProfileViewModel.swift */; };
@@ -141,6 +146,11 @@
 		675935CB2BE6A790005D535F /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		675935CD2BE6AA3C005D535F /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		675935D12BE6AE87005D535F /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		675935F22BF427DD005D535F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		675935F52BF43CB1005D535F /* SearchDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataController.swift; sourceTree = "<group>"; };
+		675935F82BF43D41005D535F /* Search.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Search.xcdatamodel; sourceTree = "<group>"; };
+		675935FA2BF43F3A005D535F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		675935FC2BF44BFC005D535F /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
 		67C283DA2BE3D26B00156BF4 /* OtherProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewModel.swift; sourceTree = "<group>"; };
 		67C283DC2BE3DA2C00156BF4 /* OtherProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileMenuType.swift; sourceTree = "<group>"; };
 		67C283DE2BE3F00700156BF4 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
@@ -278,6 +288,7 @@
 			children = (
 				6735D0D62BD8AE06003755A8 /* Assets.xcassets */,
 				6735D0FD2BD8AE8D003755A8 /* Colors.xcassets */,
+				675935F72BF43D41005D535F /* Search.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -318,6 +329,7 @@
 		6735D1152BD978E6003755A8 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
+				675935F42BF43C3D005D535F /* Search */,
 				67F6E9432BE2ACD2007DD169 /* Protocol */,
 				67F6E93E2BE2AA17007DD169 /* Navigator */,
 				6735D1162BD97907003755A8 /* DiContainer.swift */,
@@ -434,6 +446,14 @@
 				675935D12BE6AE87005D535F /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		675935F42BF43C3D005D535F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				675935F52BF43CB1005D535F /* SearchDataController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		67C283E02BE40DC400156BF4 /* PhotoPicker */ = {
@@ -570,6 +590,9 @@
 			isa = PBXGroup;
 			children = (
 				67F6E94A2BE32D25007DD169 /* SearchView.swift */,
+				675935F22BF427DD005D535F /* SearchViewModel.swift */,
+				675935FA2BF43F3A005D535F /* SearchBar.swift */,
+				675935FC2BF44BFC005D535F /* RecentSearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -731,10 +754,12 @@
 				67DBB4292BE02E06002B2D62 /* Constant.swift in Sources */,
 				67F6E94B2BE32D25007DD169 /* SearchView.swift in Sources */,
 				67DBB4052BE02774002B2D62 /* UserService.swift in Sources */,
+				675935F92BF43D41005D535F /* Search.xcdatamodeld in Sources */,
 				67DBB41E2BE02C04002B2D62 /* PlaceholderView.swift in Sources */,
 				67F6E9492BE32D1F007DD169 /* ChatView.swift in Sources */,
 				6735D2022BDB4B9A003755A8 /* HomeView.swift in Sources */,
 				6735D1142BD97619003755A8 /* AuthenticationViewModel.swift in Sources */,
+				675935F62BF43CB1005D535F /* SearchDataController.swift in Sources */,
 				67DBB4272BE02DD2002B2D62 /* UserObject.swift in Sources */,
 				67DBB40F2BE02A06002B2D62 /* DBError.swift in Sources */,
 				67DBB4142BE02A5E002B2D62 /* MyProfileView.swift in Sources */,
@@ -753,6 +778,8 @@
 				6735D2042BDB4BB5003755A8 /* MessageViewModel.swift in Sources */,
 				675935C62BE563AF005D535F /* MyProfileMenuType.swift in Sources */,
 				67DBB4192BE02AB9002B2D62 /* SettingView.swift in Sources */,
+				675935FD2BF44BFC005D535F /* RecentSearchView.swift in Sources */,
+				675935FB2BF43F3A005D535F /* SearchBar.swift in Sources */,
 				67DBB4162BE02A89002B2D62 /* OtherProfileView.swift in Sources */,
 				675935C32BE55BC4005D535F /* UploadSourceType.swift in Sources */,
 				675935CC2BE6A790005D535F /* MemoryStorage.swift in Sources */,
@@ -776,6 +803,7 @@
 				6735D1242BD982BA003755A8 /* MainTabView.swift in Sources */,
 				67C283DD2BE3DA2C00156BF4 /* OtherProfileMenuType.swift in Sources */,
 				675935CA2BE6A723005D535F /* ImageCacheService.swift in Sources */,
+				675935F32BF427DD005D535F /* SearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1162,6 +1190,19 @@
 			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		675935F72BF43D41005D535F /* Search.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				675935F82BF43D41005D535F /* Search.xcdatamodel */,
+			);
+			currentVersion = 675935F82BF43D41005D535F /* Search.xcdatamodel */;
+			path = Search.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6735D0C72BD8AE04003755A8 /* Project object */;
 }

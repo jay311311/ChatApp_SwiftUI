@@ -21,9 +21,10 @@ struct LoginView: View {
                     .foregroundStyle(.bkText)
                     .padding(.top,80)
                 
-                Text("로그인 방식을 선택해주세요")
+                Text("Enter with Google Login")
                     .font(.system(size: 14))
                     .foregroundStyle(.greyDeep)
+                    .padding(.top,10)
                 
             }.padding(.horizontal, 30)
             Spacer()

@@ -71,7 +71,7 @@ struct MyProfileView: View {
         Button {
             viewModel.isPresendDescView.toggle()
         } label: {
-            Text(viewModel.userInfo?.description ?? "상태메시지를 입력해주세요." )
+            Text(viewModel.userInfo?.description ?? "Please enter a status message" )
                 .font(.system(size: 14))
                 .foregroundColor(.whiteFix)
         }.sheet(isPresented: $viewModel.isPresendDescView) {

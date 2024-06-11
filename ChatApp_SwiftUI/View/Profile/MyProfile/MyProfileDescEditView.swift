@@ -16,11 +16,11 @@ struct MyProfileDescEditView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("상태메시지를 입력해주세요", text: $description)
+                TextField("Please enter a status message", text: $description)
                     .multilineTextAlignment(.center)
             }
             .toolbar {
-                Button("완료") {
+                Button("Done") {
                     dismiss()
                     onCompleted(description)
                 }

@@ -28,7 +28,7 @@ struct OtherProfileView: View {
                     Spacer()
                     URLImageView(urlString: viewModel.userInfo?.profileURL)
                         .frame(width: 60, height: 60)
-                        .padding(.bottom, 16)
+//                        .padding(.bottom, 16)
                         .clipShape(Circle())
                     
                     Text("\(viewModel.userInfo?.name ?? "unknown")")

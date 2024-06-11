@@ -117,7 +117,7 @@ struct HomeView: View {
                 Text(viewModel.myUser?.name ?? "Name")
                     .font(.system(size: 22, weight: .bold))
                     .foregroundColor(.bkText)
-                Text(viewModel.myUser?.description ?? "상태 메시지 입력")
+                Text(viewModel.myUser?.description ?? "Please enter a status message")
                     .font(.system(size: 12))
                     .foregroundColor(.greyDeep)
             }
@@ -126,8 +126,7 @@ struct HomeView: View {
             
             URLImageView(urlString: viewModel.myUser?.profileURL)
                 .foregroundStyle(.greyFix)
-                .frame(width: 42, height: 42)
-                .padding(.all, 5)
+                .frame(width: 40, height: 40)
                 .clipShape(Circle())
 
         }

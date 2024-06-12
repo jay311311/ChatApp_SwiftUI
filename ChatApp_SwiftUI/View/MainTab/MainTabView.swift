@@ -20,7 +20,7 @@ struct MainTabView: View {
                     case .house:
                         HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .message:
-                        MessageView()
+                        ChatListView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .phone:
                         CallView()
                     }

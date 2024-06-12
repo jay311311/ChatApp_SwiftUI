@@ -53,6 +53,7 @@ class HomeViewModel: ObservableObject {
                     self?.phase = .success
                     self?.users = users
                 }.store(in: &subscriptions)
+            
         case let .presentView(destination):
             modalDestination = destination
             
@@ -73,11 +74,16 @@ class HomeViewModel: ObservableObject {
                     self?.users = users
                 }.store(in: &subscriptions)
             
-        case let .goToChat(User):
-            // mock-data
-            self.container.navigator.push(to: .chat(chatRoomId: "chatRoom1_id",
-                                                    myId: "김하늘",
-                                                    otherUserId: "user1_id"))
+        case let .goToChat(otherUser):
+            container.services.chatRoomService.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
+                .sink { completion in
+                    
+                } receiveValue: { [weak self] chatRoom in
+                    guard let `self` = self else { return }
+                    self.container.navigator.push(to: .chat(chatRoomId: chatRoom.chatRoomId,
+                                                            myId: self.userId,
+                                                            otherUserId: otherUser.id))
+                }.store(in: &subscriptions)
         }
     }
 }

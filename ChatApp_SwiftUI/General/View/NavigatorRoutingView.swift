@@ -14,8 +14,7 @@ struct NavigatorRoutingView: View {
     var body: some View {
         switch destination {
         case let .chat(chatRoomId, myId, otherUserId) :
-            ChatView()
-                .foregroundStyle(.blue)
+            ChatView(viewModel: .init(container: container, chatRoomId: chatRoomId, myUserId: myId, otherUserId: otherUserId))
         case let .search(userId):
             SearchView(viewModel: .init(container: container, userId: userId))
         }

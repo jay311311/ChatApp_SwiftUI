@@ -48,9 +48,8 @@ class AuthenticationViewModel: ObservableObject {
             isLoading = true
             
             container.services.authService.signInWithGoogle()
-                .flatMap { [weak self] user -> AnyPublisher<User, ServiceError> in
-                    guard let `self` = self else { return Empty().eraseToAnyPublisher() }
-                    return self.container.services.userService.addUser(user)
+                .flatMap { user in
+                    self.container.services.userService.addUser(user)
                 }
                 .sink { [weak self] completion in
                     if case .failure = completion {
@@ -65,7 +64,7 @@ class AuthenticationViewModel: ObservableObject {
         case .logout:
             container.services.authService.logout()
                 .sink { completion in
-                    // TODO:
+                    
                 } receiveValue: { [weak self] _ in
                     self?.authenticationState = .unauthenticated
                     self?.userId = nil
